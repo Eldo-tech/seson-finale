@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Management System</title>
+    <link rel="stylesheet" href="sales.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<title>sales management.</title>
+<link rel="icon" type="image/x-icon" href="img/eldo logo.jpg">
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+          <i class="fas fa-laptop" style="color: white;"></i>
+          <a href="index.html" class="navbar-brand">ELDO-TECH PHONE CARE</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+           
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+        <h1>Sales Management System</h1>
+
+        <!-- Form for adding items and calculating sales -->
+        <form id="salesForm" onsubmit="calculateSales(event)">
+            <div class="form-group">
+                <label for="item">Item Name</label>
+                <input type="text" id="item" name="item" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="price">Price per Item ($)</label>
+                <input type="number" id="price" name="price" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="stock">Items in Stock</label>
+                <input type="number" id="stock" name="stock" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="sold">Items Sold</label>
+                <input type="number" id="sold" name="sold" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn">Calculate</button>
+        </form>
+
+        <!-- Sales report section -->
+        <div id="reportSection" class="report">
+            <h3>Sales Report</h3>
+            <table id="salesReport">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price per Item</th>
+                        <th>Stock in Hand</th>
+                        <th>Items Sold</th>
+                        <th>Total Stock Value</th>
+                        <th>Total Sales</th>
+                        <th>Profit</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="totalProfit" class="total-profit">
+                <p>Total Profit: $<span id="profitAmount">0.00</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="sales.js"></script>
+
+</body>
+
+</html>
+
+

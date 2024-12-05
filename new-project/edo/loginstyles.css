@@ -1,0 +1,23 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const loginModal = document.getElementById('loginModal');
+    const loginForm = document.getElementById('loginForm');
+    const yearSpan = document.getElementById('year');
+
+    // Set current year
+    yearSpan.textContent = new Date().getFullYear();
+
+    // Prevent access until login is successful
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent form submission
+
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        if (email && password) {
+            alert(`Welcome, ${email}`);
+            loginModal.style.display = 'none'; // Hide the modal
+        } else {
+            alert('Please enter valid credentials');
+        }
+    });
+});
